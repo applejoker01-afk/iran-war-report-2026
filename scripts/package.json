@@ -1,0 +1,13 @@
+{
+  "name": "middle-east-report-scripts",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Note自動投稿スクリプト",
+  "scripts": {
+    "post": "node post-to-note.js",
+    "test": "node --check post-to-note.js && echo 'Syntax OK'"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}

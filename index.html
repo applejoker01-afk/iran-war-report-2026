@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="中東戦争レポート 2026｜イスラエル・イラン戦争の全貌">
+<meta property="og:description" content="2026年のイスラエル・イラン戦争を戦況・兵器・経済の3視点で解説。CSIS・防衛研究所・JETROなど多数のシンクタンク分析を統合">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<title>中東戦争レポート 2026｜イスラエル・イラン戦争の全貌と日本経済への影響</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=Oswald:wght@400;700&display=swap');
+:root{
+  --navy:#0d1b2a;--dark-blue:#1a3a5c;--mid-blue:#2e75b6;--light-blue:#5b9bd5;
+  --gold:#c9a84c;--red:#c0392b;--orange:#e67e22;--white:#f0f4f8;--gray:#8899aa;
+  --panel:rgba(255,255,255,0.03);--border:rgba(46,117,182,0.3);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--navy);color:var(--white);font-family:'Noto Sans JP',sans-serif;line-height:1.7;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(13,27,42,0.97);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);display:flex;align-items:center;padding:0 24px;height:56px;gap:4px;flex-wrap:wrap;}
+.nav-logo{font-family:'Oswald';font-size:16px;color:var(--gold);letter-spacing:2px;margin-right:16px;white-space:nowrap;}
+.nav-btn{padding:5px 12px;border-radius:4px;border:1px solid transparent;background:transparent;color:var(--gray);font-size:12px;cursor:pointer;font-family:'Noto Sans JP';transition:all .2s;white-space:nowrap;}
+.nav-btn.active,.nav-btn:hover{background:var(--mid-blue);color:#fff;border-color:var(--mid-blue);}
+
+/* ── SECTIONS ── */
+section{display:none;animation:fadeIn .35s ease;}
+section.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.container{max-width:960px;margin:0 auto;padding:40px 24px 80px;}
+
+/* ── HERO ── */
+.hero{text-align:center;padding:60px 24px 48px;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(46,117,182,0.15) 0%,transparent 70%);border-bottom:1px solid var(--border);}
+.hero-eyebrow{font-family:'Oswald';letter-spacing:4px;color:var(--gold);font-size:12px;margin-bottom:14px;text-transform:uppercase;}
+.hero-title{font-family:'Noto Serif JP';font-size:clamp(24px,4vw,48px);font-weight:900;line-height:1.25;margin-bottom:14px;}
+.hero-title span{color:var(--gold);}
+.hero-sub{color:var(--gray);font-size:14px;max-width:640px;margin:0 auto 28px;}
+.badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.badge{padding:5px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:1px;border:1px solid;}
+.badge-red{border-color:var(--red);color:var(--red);}
+.badge-blue{border-color:var(--mid-blue);color:var(--light-blue);}
+.badge-gold{border-color:var(--gold);color:var(--gold);}
+
+/* ── 台本スタイル ── */
+.script-section{margin-bottom:40px;}
+.script-h1{font-family:'Noto Serif JP';font-size:22px;font-weight:700;color:var(--light-blue);border-bottom:2px solid var(--mid-blue);padding-bottom:8px;margin:36px 0 16px;}
+.script-h2{font-family:'Noto Serif JP';font-size:17px;font-weight:700;color:var(--gold);margin:24px 0 10px;}
+.script-p{font-size:14px;line-height:1.9;color:#ccd8e4;margin-bottom:12px;}
+.note-box{background:rgba(46,117,182,0.08);border-left:3px solid var(--mid-blue);padding:10px 16px;border-radius:0 6px 6px 0;font-size:12px;color:var(--gray);margin:10px 0 16px;font-style:italic;}
+.cue-label{display:inline-block;background:rgba(192,57,43,0.15);border:1px solid rgba(192,57,43,0.4);color:#e87c7c;font-size:11px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:4px;margin-bottom:8px;}
+.bullet-list{list-style:none;padding-left:0;margin:8px 0 14px;}
+.bullet-list li{padding:4px 0 4px 20px;position:relative;font-size:14px;color:#ccd8e4;}
+.bullet-list li::before{content:"▶";position:absolute;left:0;color:var(--mid-blue);font-size:10px;top:6px;}
+
+/* ── INFO TABLE ── */
+.info-table{width:100%;border-collapse:separate;border-spacing:0 4px;margin:12px 0 20px;}
+.info-table th{background:var(--dark-blue);color:var(--white);font-size:12px;font-weight:700;padding:10px 14px;text-align:left;}
+.info-table th:first-child{border-radius:6px 0 0 0;}
+.info-table th:last-child{border-radius:0 6px 0 0;}
+.info-table td{padding:9px 14px;font-size:13px;}
+.info-table tr td:first-child{background:rgba(26,58,92,0.5);font-weight:700;color:var(--light-blue);border-radius:0;}
+.info-table tr td:last-child{background:rgba(26,58,92,0.25);color:#ccd8e4;}
+
+/* ── WEAPON CARDS ── */
+.weapon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:16px 0;}
+.weapon-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:all .3s;}
+.weapon-card:hover{border-color:var(--mid-blue);transform:translateY(-2px);}
+.weapon-head{padding:16px 18px;display:flex;align-items:flex-start;gap:12px;}
+.weapon-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.weapon-name{font-family:'Oswald';font-size:16px;letter-spacing:1px;margin-bottom:3px;}
+.weapon-type{font-size:11px;color:var(--gray);letter-spacing:1.5px;text-transform:uppercase;}
+.spec-row{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 18px;border-top:1px solid rgba(255,255,255,0.05);font-size:12px;gap:8px;}
+.spec-label{color:var(--gray);flex-shrink:0;width:100px;}
+.spec-val{font-weight:700;color:var(--white);text-align:right;font-size:11px;}
+.weapon-tag{display:inline-block;margin:0 18px 14px;padding:3px 10px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:1px;}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;max-width:860px;margin:0 auto;}
+.timeline::before{content:'';position:absolute;left:110px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--mid-blue),rgba(46,117,182,0.1));}
+.tl-item{display:flex;margin-bottom:6px;position:relative;}
+.tl-date{width:110px;flex-shrink:0;text-align:right;padding-right:24px;padding-top:14px;font-family:'Oswald';font-size:12px;color:var(--gold);line-height:1.3;}
+.tl-dot{position:absolute;left:104px;top:16px;width:14px;height:14px;border-radius:50%;background:var(--mid-blue);border:3px solid var(--navy);z-index:1;}
+.tl-dot.major{background:var(--gold);width:18px;height:18px;left:102px;top:14px;}
+.tl-dot.red-dot{background:var(--red);}
+.tl-content{flex:1;padding:12px 18px;margin-left:22px;background:var(--panel);border:1px solid var(--border);border-radius:8px;transition:border-color .2s;}
+.tl-content:hover{border-color:var(--mid-blue);}
+.tl-content.major{border-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.05);}
+.tl-content.danger{border-color:rgba(192,57,43,0.4);background:rgba(192,57,43,0.05);}
+.tl-ev{font-weight:700;font-size:14px;margin-bottom:4px;}
+.tl-desc{font-size:12px;color:var(--gray);line-height:1.6;}
+
+/* ── ECONOMY ── */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:16px 0;}
+.kpi-card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center;}
+.kpi-num{font-family:'Oswald';font-size:32px;color:var(--gold);line-height:1;}
+.kpi-unit{font-size:14px;color:var(--gray);margin-left:3px;}
+.kpi-desc{font-size:11px;color:var(--gray);margin-top:6px;line-height:1.5;}
+.price-track{position:relative;display:flex;flex-direction:column;gap:0;}
+.price-track::before{content:'';position:absolute;left:100px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--red),var(--gold),var(--light-blue));}
+.price-row{display:flex;align-items:center;padding:5px 0;}
+.price-date{width:100px;text-align:right;padding-right:18px;font-size:11px;color:var(--gray);flex-shrink:0;}
+.price-dot-wrap{width:18px;flex-shrink:0;display:flex;justify-content:center;}
+.p-dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--navy);}
+.price-content{margin-left:8px;display:flex;align-items:center;gap:8px;}
+.price-bar{height:22px;border-radius:0 4px 4px 0;display:flex;align-items:center;padding:0 10px;}
+.p-bar-val{font-family:'Oswald';font-size:14px;font-weight:700;white-space:nowrap;}
+.price-note{font-size:10px;color:var(--gray);}
+.impact-table{width:100%;border-collapse:separate;border-spacing:0 5px;}
+.impact-table th{font-size:10px;color:var(--gray);letter-spacing:1.5px;text-transform:uppercase;padding-bottom:6px;text-align:left;}
+.impact-table td{padding:9px 12px;font-size:12px;}
+.impact-table tr td:first-child{border-radius:6px 0 0 6px;background:rgba(26,58,92,0.5);font-weight:700;color:var(--light-blue);}
+.impact-table tr td:last-child{border-radius:0 6px 6px 0;background:rgba(26,58,92,0.25);color:#ccd8e4;}
+
+/* ── THINKTANK ── */
+.tt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;}
+.tt-card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:18px;border-left:3px solid var(--mid-blue);}
+.tt-org{font-family:'Oswald';font-size:12px;letter-spacing:2px;color:var(--gold);margin-bottom:8px;}
+.tt-quote{font-size:12px;line-height:1.8;color:#cdd8e4;font-style:italic;margin-bottom:8px;}
+.tt-date{font-size:10px;color:var(--gray);}
+
+/* ── MAP ── */
+.map-wrap{background:rgba(26,58,92,0.2);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.map-legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:16px;}
+.map-leg-item{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--border);border-radius:6px;padding:8px 12px;}
+.m-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+
+/* ── UTILITY ── */
+.section-h{font-family:'Noto Serif JP';font-size:22px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:10px;}
+.section-num{width:32px;height:32px;border-radius:50%;background:var(--mid-blue);display:flex;align-items:center;justify-content:center;font-family:'Oswald';font-size:15px;flex-shrink:0;}
+.section-sub{color:var(--gray);font-size:13px;margin-bottom:28px;margin-left:42px;}
+.alert-box{background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.4);border-radius:8px;padding:12px 16px;margin:14px 0;font-size:13px;color:#e8b4ae;line-height:1.7;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr;}.tl-date{width:70px;font-size:10px;}.timeline::before{left:70px;}.tl-dot{left:64px;}.tl-content{margin-left:14px;}.weapon-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">🌍 中東戦争レポート 2026</div>
+  <button class="nav-btn active" onclick="show('script')">📄 台本・解説</button>
+  <button class="nav-btn" onclick="show('timeline')">📅 タイムライン</button>
+  <button class="nav-btn" onclick="show('map')">🗺 戦況マップ</button>
+  <button class="nav-btn" onclick="show('weapons')">🔫 兵器解説</button>
+  <button class="nav-btn" onclick="show('economy')">📈 経済影響</button>
+  <button class="nav-btn" onclick="show('thinktank')">🏛 シンクタンク</button>
+</nav>
+
+<!-- ════ 台本・解説 ════ -->
+<section id="script" class="active">
+<div class="hero">
+  <div class="hero-eyebrow">Deep Research Report｜2026年4月</div>
+  <h1 class="hero-title">なぜ今、<span>中東</span>が燃えているのか<br>イスラエル・イラン戦争の全貌</h1>
+  <p class="hero-sub">CSIS・IISS・防衛研究所・JETRO ほか複数の国際シンクタンク分析を統合し、戦況・兵器・経済の3視点から多角的に評価</p>
+  <div class="badges">
+    <span class="badge badge-red">⚠ 紛争継続中</span>
+    <span class="badge badge-blue">📊 シンクタンク多角評価</span>
+    <span class="badge badge-gold">🇯🇵 日本経済への影響分析</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- 動画構成 -->
+<div class="script-section">
+<div class="script-h1">📋 動画全体構成</div>
+<table class="info-table">
+  <thead><tr><th>セクション</th><th>内容・目安時間</th></tr></thead>
+  <tbody>
+    <tr><td>オープニング</td><td>約1〜2分｜タイトルカード・概要説明</td></tr>
+    <tr><td>第1部：背景編</td><td>約5〜7分｜なぜ今、中東なのか？</td></tr>
+    <tr><td>第2部：戦況編</td><td>約7〜8分｜2026年イラン戦争の全貌（地図解説付き）</td></tr>
+    <tr><td>第3部：兵器編</td><td>約7〜8分｜最新鋭兵器を徹底解説</td></tr>
+    <tr><td>第4部：経済編</td><td>約5〜7分｜日本への影響：原油・ガソリン・物価</td></tr>
+    <tr><td>クロージング</td><td>約1〜2分｜まとめ・今後の展望</td></tr>
+    <tr><td>合計</td><td>約26〜32分</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- オープニング -->
+<div class="script-section">
+<div class="script-h1">🎬 オープニング（約1〜2分）</div>
+<div class="cue-label">ここから話す</div>
+<div class="note-box">📌 演出：タイトルカード→中東の地図（全体）→ホルムズ海峡クローズアップ→BGMフェードイン</div>
+<p class="script-p">みなさん、こんにちは。今日は、2026年現在、世界で最も緊迫した地域のひとつ——中東情勢についてレポートします。</p>
+<p class="script-p">2023年10月、イスラエルとガザのハマスの衝突から始まったこの戦争は、今やイランを巻き込んだ大規模な地域紛争に拡大しています。</p>
+<p class="script-p">特に2026年2月28日には、アメリカとイスラエルが合同でイランを攻撃するという、歴史的な出来事が発生しました。それに対してイランは報復攻撃を行い、世界の石油輸送の2割を担うホルムズ海峡が事実上封鎖されるという、かつてない事態に陥っています。</p>
+<p class="script-p">日本にとって、これは対岸の火事ではありません。日本の原油輸入の94%が中東に依存しており、ガソリン価格の急騰や物価上昇という形で、すでに私たちの生活に影響が出ています。</p>
+<p class="script-p">今日の動画では、この複雑な状況を3つの視点から解説します。①戦況分析（地図・戦線の動き）、②最新鋭の兵器解説、③日本経済への影響です。ぜひ最後までご覧ください。</p>
+</div>
+
+<!-- 第1部 -->
+<div class="script-section">
+<div class="script-h1">第1部：背景編（約5〜7分）</div>
+<div class="note-box">📌 演出：中東全体地図を表示。各国の位置関係を示しながら解説。</div>
+
+<div class="script-h2">① 2023年10月——すべての始まり</div>
+<div class="cue-label">ここから話す</div>
+<p class="script-p">2023年10月7日、ガザを拠点とするハマスがイスラエルに大規模な奇襲攻撃を実施。約1200人のイスラエル市民が犠牲になり、約240人が人質としてガザに連行されました。イスラエルはこれを「イスラエルの9.11」と表現し、直ちに軍事報復を開始。ガザへの空爆と地上侵攻を行いました。2025年12月時点では双方合わせて7万1000人以上が犠牲になっています。</p>
+
+<div class="script-h2">② 「抵抗の枢軸」——イランの代理組織ネットワーク</div>
+<div class="cue-label">ここから話す</div>
+<p class="script-p">イランはレバノンのヒズボラ、イエメンのフーシ派、イラクのシーア派民兵、ガザのハマスなど「抵抗の枢軸」を通じて中東に影響力を持ちます。ガザ戦争が始まるとこれらの組織がイスラエルへの攻撃を開始。イスラエルはこれらを「各個撃破」する形で反撃を拡大しました。</p>
+<div class="note-box">📌 地図：「抵抗の枢軸」各国（イラン・レバノン・イエメン・ガザ）を矢印で結ぶ</div>
+
+<div class="script-h2">③ 2025年6月「12日間戦争」——最初の直接対決</div>
+<div class="cue-label">ここから話す</div>
+<p class="script-p">2025年6月、イスラエルはイランの核施設・ウラン濃縮施設を攻撃。アメリカも終盤にB-2爆撃機でフォルドゥ核施設を攻撃しました。この「12日間戦争」後、トランプ大統領の仲介で停戦となりましたが、イラン体制を揺るがすには至りませんでした。</p>
+</div>
+
+<!-- 第2部 -->
+<div class="script-section">
+<div class="script-h1">第2部：戦況編（約7〜8分）</div>
+<div class="note-box">📌 演出：中東地図ベースに攻撃・報復ルートをアニメーションで表示</div>
+
+<div class="script-h2">① 作戦開始：2026年2月28日「Operation Epic Fury」</div>
+<div class="cue-label">ここから話す</div>
+<p class="script-p">2026年2月28日、米国とイスラエルが合同でイランへの大規模攻撃を開始。これはアメリカとイスラエルが同等のパートナーとして共同作戦を行う史上初の事例でした。作戦の目標は①ミサイル能力の破壊、②海軍の殲滅、③核兵器保有の阻止、④代理組織への支援遮断の4点です。最初の24時間だけで1000か所以上を攻撃し、イスラエル空軍は700回以上の航空作戦を実施しました。</p>
+
+<div class="script-h2">② ハメネイ最高指導者の暗殺</div>
+<div class="cue-label">ここから話す</div>
+<p class="script-p">この攻撃の最大の衝撃が、ハメネイ最高指導者の暗殺です。イスラエルはテヘランの監視カメラを長年ハッキングしており、ハメネイ師の動きを把握していたとされています。空爆により、ハメネイ師と革命防衛隊幹部40人が死亡したとイスラエル側は発表しました。</p>
+
+<div class="script-h2">③ イランの報復とホルムズ海峡封鎖</div>
+<div class="cue-label">ここから話す</div>
+<p class="script-p">イランはドローン約1000機とミサイル約500発でイスラエルと湾岸諸国の米軍基地を攻撃。3月2日にはホルムズ海峡の封鎖を宣言しました。ホルムズ海峡は世界の原油供給の約20%が通過する「世界の動脈」です。通航隻数は1日100隻以上から3〜4隻へ激減しました。4月8日に米・イラン停戦合意、4月18日にイスラエル・レバノン停戦合意が成立しましたが、ホルムズ海峡の正常化はいまだ見えていません。</p>
+<div class="note-box">📌 シンクタンク引用：CSIS「初の24時間で1000か所超を攻撃。イランのドローン・ミサイル発射は14日目までに最大95%減少」</div>
+</div>
+
+<!-- 第3部（兵器）は兵器タブへ誘導 -->
+<div class="script-section">
+<div class="script-h1">第3部：兵器編（約7〜8分）</div>
+<div class="alert-box">
+  🔫 詳細な兵器解説は <strong>「兵器解説」タブ</strong> をご覧ください。台本テキストは以下の通りです。
+</div>
+<div class="cue-label">ここから話す</div>
+<p class="script-p">今回の戦争では、B-2スピリット・ステルス爆撃機、GBU-57バンカーバスター、F-35Iアディール、トマホーク巡航ミサイル、LUCASドローン、そしてイスラエルの三層防衛システム（アイアンドーム・ダビデスリング・アロー3）が主役となりました。</p>
+<p class="script-p">特に注目すべきは、B-2がミズーリ州から約18時間かけてイランへ到達し、地下60メートルを貫通できるGBU-57バンカーバスターでフォルドゥ核施設を攻撃した事実です。また、イランのドローン「シャヘド136」を逆工学でコピーした「LUCAS」が初めて実戦投入されたことも注目点です。</p>
+<p class="script-p">F-35Iアディールはイラン防空網を完全に無力化し、史上初となる空対空戦闘での敵有人機撃墜を達成。マスク氏が「時代遅れ」と批判した有人ステルス機の圧倒的実力を証明しました。</p>
+</div>
+
+<!-- 第4部（経済）は経済タブへ誘導 -->
+<div class="script-section">
+<div class="script-h1">第4部：経済編（約5〜7分）</div>
+<div class="alert-box">
+  📈 詳細なグラフは <strong>「経済影響」タブ</strong> をご覧ください。
+</div>
+<div class="cue-label">ここから話す</div>
+<p class="script-p">日本の原油輸入の94%が中東に依存し、そのほぼ全量がホルムズ海峡を通過しています。封鎖前に1バレル60ドル台だった原油価格は、4月7日に117.63ドルまで急騰しました。ガソリンも158.5円から190.8円へ約20%上昇。軽油も大幅上昇し、物流コストが全商品に転嫁されています。</p>
+<p class="script-p">JETROの分析では、日本のホルムズ代替ルートは限られており、備蓄254日分があるとはいえ長期化すれば供給逼迫は避けられません。WTOの世界貿易見通しでは中東の輸出量成長率が2026年は0.6%増にとどまるとされています。</p>
+</div>
+
+<!-- クロージング -->
+<div class="script-section">
+<div class="script-h1">🎬 クロージング（約1〜2分）</div>
+<div class="cue-label">ここから話す</div>
+<p class="script-p">今日は中東情勢の最新動向を3つの視点からお伝えしました。①ガザ戦争から始まり2026年2月のイラン攻撃への歴史的展開、②ホルムズ海峡という「世界の動脈」が止まった現状、③B-2・GBU-57・F-35Iなど最新鋭兵器の実力、そして④日本の原油94%が中東依存という現実の中で起きているガソリン価格急騰・物価上昇への影響。</p>
+<p class="script-p">現在、米・イランの停戦合意は成立していますが、ホルムズ海峡はいまだ正常化していません。日本はエネルギー安全保障の観点から中東一辺倒の依存体制を見直す必要があるかもしれません。今日の動画が中東情勢を理解するひとつの手がかりになれば嬉しいです。チャンネル登録・高評価をお願いします！</p>
+<div class="note-box">📌 演出：アウトロBGM→チャンネルロゴ→関連動画カード</div>
+</div>
+
+</div><!-- /container -->
+</section>
+
+<!-- ════ TIMELINE ════ -->
+<section id="timeline">
+<div class="container">
+<div class="section-h"><span class="section-num">📅</span>主要タイムライン 2023–2026</div>
+<div class="section-sub">2023年10月のハマス奇襲から2026年4月の現在まで、主要11イベントを時系列で追う</div>
+<div class="timeline">
+
+  <div class="tl-item"><div class="tl-date">2023年<br>10月7日</div><div class="tl-dot major"></div>
+  <div class="tl-content major"><div class="tl-ev">🔥 ハマス奇襲「アル＝アクサの洪水作戦」</div>
+  <div class="tl-desc">ロケット弾数千発＋地上侵攻。イスラエル人約1200人死亡、251人を人質連行。イスラエルが宣戦布告。</div></div></div>
+
+  <div class="tl-item"><div class="tl-date">2023年<br>10月27日</div><div class="tl-dot"></div>
+  <div class="tl-content"><div class="tl-ev">🪖 イスラエル軍、ガザ地上侵攻開始</div>
+  <div class="tl-desc">大規模空爆に続き地上部隊がガザ北部へ侵攻。民間人犠牲が急増。</div></div></div>
+
+  <div class="tl-item"><div class="tl-date">2023年<br>11月〜</div><div class="tl-dot"></div>
+  <div class="tl-content"><div class="tl-ev">🌐 「抵抗の枢軸」参戦——地域戦争へ拡大</div>
+  <div class="tl-desc">ヒズボラがイスラエル北部を攻撃、フーシ派が紅海の商船を攻撃。イラクのシーア派民兵も活発化。</div></div></div>
+
+  <div class="tl-item"><div class="tl-date">2025年<br>1月19日</div><div class="tl-dot"></div>
+  <div class="tl-content"><div class="tl-ev">🕊 ガザ停戦合意（第1段階）発効</div>
+  <div class="tl-desc">トランプ大統領仲介。42日間の第1段階で人質33人解放・囚人734人釈放。断続的な戦闘が続く。</div></div></div>
+
+  <div class="tl-item"><div class="tl-date">2025年<br>6月21日</div><div class="tl-dot major"></div>
+  <div class="tl-content major"><div class="tl-ev">⚡ 「12日間戦争」——イスラエル・イラン直接衝突</div>
+  <div class="tl-desc">イスラエルがイランの核施設を攻撃。米国がB-2でフォルドゥ核施設を攻撃。イランがドローン・ミサイルで報復。12日後に停戦。</div></div></div>
+
+  <div class="tl-item"><div class="tl-date">2025年<br>12月</div><div class="tl-dot"></div>
+  <div class="tl-content"><div class="tl-ev">🇮🇷 イランで1979年以来最大規模の反体制デモ</div>
+  <div class="tl-desc">経済危機・通貨暴落を背景に100以上の都市で大規模デモ。トランプ大統領「3万2000人が殺害」と主張。</div></div></div>
+
+  <div class="tl-item"><div class="tl-date">2026年<br>2月28日</div><div class="tl-dot major"></div>
+  <div class="tl-content major"><div class="tl-ev">💥 米・イスラエル合同イラン攻撃「Operation Epic Fury」</div>
+  <div class="tl-desc">史上初の米・イスラエル合同作戦。ハメネイ師暗殺。最初の24時間で1000か所超攻撃。B-2×7機、GBU-57×12発、トマホーク×30発以上。F-35史上初の空対空撃墜達成。</div></div></div>
+
+  <div class="tl-item"><div class="tl-date">2026年<br>3月2日</div><div class="tl-dot red-dot"></div>
+  <div class="tl-content danger"><div class="tl-ev">🛢 ホルムズ海峡封鎖——世界の動脈が止まる</div>
+  <div class="tl-desc">イラン革命防衛隊が封鎖宣言。通航100隻以上/日→3〜4隻に激減。原油60ドル台→117ドルへ急騰。ガソリン158円→190円。</div></div></div>
+
+  <div class="tl-item"><div class="tl-date">2026年<br>4月8日</div><div class="tl-dot"></div>
+  <div class="tl-content"><div class="tl-ev">🤝 米・イラン 2週間の停戦合意</div>
+  <div class="tl-desc">原油が91ドルに急落。しかしホルムズ海峡の通航は3〜4隻/日のまま。恒久的和平交渉は難航。</div></div></div>
+
+  <div class="tl-item"><div class="tl-date">2026年<br>4月18日</div><div class="tl-dot"></div>
+  <div class="tl-content"><div class="tl-ev">🇱🇧 イスラエル・レバノン停戦合意</div>
+  <div class="tl-desc">トランプ大統領がネタニヤフ首相に圧力。対イラン作戦の泥沼化を懸念したトランプ政権がイスラエルを抑制。</div></div></div>
+
+  <div class="tl-item"><div class="tl-date">2026年<br>4月22日</div><div class="tl-dot major"></div>
+  <div class="tl-content major"><div class="tl-ev">📍 現在——情勢依然流動的</div>
+  <div class="tl-desc">停戦成立もホルムズ正常化せず。ガザ停戦第2段階（武装解除）交渉は膠着。原油97〜113ドルで高止まり継続。</div></div></div>
+
+</div>
+</div>
+</section>
+
+<!-- ════ MAP ════ -->
+<section id="map">
+<div class="container">
+<div class="section-h"><span class="section-num">🗺</span>戦況マップ：中東の関係国と主要事象</div>
+<div class="section-sub">各国の役割と今回の戦争における位置付け</div>
+<div class="kpi-grid" style="margin-bottom:20px;">
+  <div class="kpi-card"><div class="kpi-num">94<span class="kpi-unit">%</span></div><div class="kpi-desc">日本の原油輸入の中東依存度。そのほぼ全量がホルムズ海峡通過</div></div>
+  <div class="kpi-card"><div class="kpi-num">20<span class="kpi-unit">%</span></div><div class="kpi-desc">世界の原油供給のうちホルムズ海峡通過分</div></div>
+  <div class="kpi-card"><div class="kpi-num">100+→3<span class="kpi-unit">隻</span></div><div class="kpi-desc">ホルムズ海峡の1日通過隻数（封鎖前→封鎖後）</div></div>
+</div>
+<div class="map-wrap" style="padding:16px;">
+  <svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" style="max-height:400px;width:100%;">
+    <defs>
+      <marker id="ma" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    </defs>
+    <rect width="800" height="480" fill="#0d1b2a"/>
+    <!-- Saudi Arabia -->
+    <polygon points="310,195 415,195 435,255 415,315 345,345 295,295 285,235" fill="#1a3a5c" stroke="#2e75b6" stroke-width="1.5"/>
+    <text x="355" y="272" fill="#5b9bd5" font-size="12" text-anchor="middle" font-family="Noto Sans JP">サウジアラビア</text>
+    <!-- Iran -->
+    <polygon points="415,96 555,86 595,126 585,196 555,236 495,246 445,216 415,176 395,136" fill="#1e3d1e" stroke="#4a9e4a" stroke-width="1.5"/>
+    <text x="490" y="166" fill="#7ec87e" font-size="13" text-anchor="middle" font-weight="bold" font-family="Noto Sans JP">イラン 🇮🇷</text>
+    <!-- Israel -->
+    <polygon points="248,184 263,179 268,200 258,212 245,204" fill="#b8860b" stroke="#ffd700" stroke-width="2"/>
+    <text x="236" y="198" fill="#ffd700" font-size="10" text-anchor="middle" font-weight="bold" font-family="Noto Sans JP">🇮🇱</text>
+    <text x="225" y="172" fill="#ffd700" font-size="11" text-anchor="middle" font-family="Noto Sans JP">イスラエル</text>
+    <!-- Lebanon -->
+    <polygon points="251,168 261,165 263,178 253,181 248,176" fill="#3d6b3d" stroke="#7ec87e" stroke-width="1"/>
+    <text x="238" y="162" fill="#7ec87e" font-size="9" font-family="Noto Sans JP">レバノン</text>
+    <!-- Gaza -->
+    <rect x="240" y="191" width="7" height="13" fill="#c0392b" stroke="#ff6b6b" stroke-width="1"/>
+    <text x="226" y="212" fill="#ff6b6b" font-size="9" font-family="Noto Sans JP">ガザ</text>
+    <!-- Iraq -->
+    <polygon points="375,125 425,115 435,175 415,195 375,195 355,155" fill="#1a3a5c" stroke="#2e75b6" stroke-width="1"/>
+    <text x="395" y="160" fill="#5b9bd5" font-size="11" text-anchor="middle" font-family="Noto Sans JP">イラク</text>
+    <!-- UAE etc -->
+    <ellipse cx="455" cy="255" rx="17" ry="9" fill="#1a3a5c" stroke="#2e75b6" stroke-width="1"/>
+    <text x="455" y="259" fill="#5b9bd5" font-size="8" text-anchor="middle" font-family="Noto Sans JP">UAE等</text>
+    <!-- Yemen -->
+    <polygon points="305,345 375,335 415,355 395,395 335,405 295,385" fill="#2d1b1b" stroke="#8b3a3a" stroke-width="1"/>
+    <text x="350" y="378" fill="#cd5c5c" font-size="11" text-anchor="middle" font-family="Noto Sans JP">イエメン</text>
+    <text x="350" y="392" fill="#cd5c5c" font-size="9" text-anchor="middle" font-family="Noto Sans JP">（フーシ派）</text>
+    <!-- Hormuz -->
+    <line x1="476" y1="254" x2="545" y2="268" stroke="#e67e22" stroke-width="2" stroke-dasharray="5,3"/>
+    <ellipse cx="524" cy="264" rx="38" ry="14" fill="rgba(230,126,34,0.15)" stroke="#e67e22" stroke-width="2"/>
+    <text x="524" y="261" fill="#e67e22" font-size="10" text-anchor="middle" font-weight="bold" font-family="Noto Sans JP">🚧ホルムズ</text>
+    <text x="524" y="274" fill="#e67e22" font-size="8" text-anchor="middle" font-family="Noto Sans JP">海峡（封鎖中）</text>
+    <!-- Persian Gulf -->
+    <text x="420" y="235" fill="#3a6fa8" font-size="10" text-anchor="middle" font-style="italic" font-family="Noto Sans JP">ペルシャ湾</text>
+    <!-- Red Sea -->
+    <text x="222" y="315" fill="#3a6fa8" font-size="9" text-anchor="middle" font-style="italic" font-family="Noto Sans JP">紅海</text>
+    <!-- Attack: Israel → Iran -->
+    <path d="M263,193 Q375,95 482,148" fill="none" stroke="#ffd700" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#ma)"/>
+    <text x="368" y="108" fill="#ffd700" font-size="9" text-anchor="middle" font-family="Noto Sans JP">F-35I・B-2攻撃</text>
+    <!-- Iran retaliation -->
+    <path d="M498,154 Q390,295 273,200" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#ma)"/>
+    <text x="385" y="252" fill="#e74c3c" font-size="9" text-anchor="middle" font-family="Noto Sans JP">ドローン・ミサイル報復</text>
+    <!-- B-2 from US -->
+    <path d="M50,115 Q200,75 474,138" fill="none" stroke="#5b9bd5" stroke-width="1.5" stroke-dasharray="8,4" marker-end="url(#ma)"/>
+    <text x="98" y="104" fill="#5b9bd5" font-size="9" font-family="Noto Sans JP">B-2（米本土から18時間）</text>
+    <!-- Houthi attacks -->
+    <path d="M348,365 Q275,345 224,305" fill="none" stroke="#cd5c5c" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ma)"/>
+    <!-- Japan direction -->
+    <text x="710" y="96" fill="#888" font-size="11" text-anchor="middle" font-family="Noto Sans JP">日本へ →</text>
+    <path d="M555,248 Q635,235 710,135" fill="none" stroke="rgba(255,165,0,0.3)" stroke-width="2" stroke-dasharray="6,4"/>
+    <!-- Legend -->
+    <rect x="590" y="340" width="185" height="110" rx="8" fill="rgba(13,27,42,0.95)" stroke="#2e75b6" stroke-width="1"/>
+    <text x="602" y="360" fill="#c9a84c" font-size="10" font-weight="bold" font-family="Noto Sans JP">凡例</text>
+    <line x1="602" y1="370" x2="628" y2="370" stroke="#ffd700" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="634" y="374" fill="#ccc" font-size="9" font-family="Noto Sans JP">イスラエル攻撃</text>
+    <line x1="602" y1="386" x2="628" y2="386" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="634" y="390" fill="#ccc" font-size="9" font-family="Noto Sans JP">イラン報復</text>
+    <line x1="602" y1="402" x2="628" y2="402" stroke="#5b9bd5" stroke-width="1.5" stroke-dasharray="8,4"/>
+    <text x="634" y="406" fill="#ccc" font-size="9" font-family="Noto Sans JP">米B-2爆撃機</text>
+    <rect x="602" y="412" width="9" height="9" fill="rgba(230,126,34,0.4)" stroke="#e67e22" stroke-width="1"/>
+    <text x="616" y="421" fill="#e67e22" font-size="9" font-family="Noto Sans JP">封鎖地点</text>
+    <text x="602" y="442" fill="#888" font-size="8" font-family="Noto Sans JP">※模式図（縮尺省略）</text>
+  </svg>
+</div>
+<div class="map-legend">
+  <div class="map-leg-item"><div class="m-dot" style="background:#ffd700;"></div><div><div style="font-size:12px;font-weight:700;">🇮🇱 イスラエル</div><div style="font-size:10px;color:var(--gray);">F-35Iで制空権奪取、ハメネイ暗殺</div></div></div>
+  <div class="map-leg-item"><div class="m-dot" style="background:#7ec87e;"></div><div><div style="font-size:12px;font-weight:700;">🇮🇷 イラン</div><div style="font-size:10px;color:var(--gray);">最高指導者暗殺、ホルムズ封鎖</div></div></div>
+  <div class="map-leg-item"><div class="m-dot" style="background:#5b9bd5;"></div><div><div style="font-size:12px;font-weight:700;">🇺🇸 アメリカ</div><div style="font-size:10px;color:var(--gray);">B-2×7機、GBU-57×12発投入</div></div></div>
+  <div class="map-leg-item"><div class="m-dot" style="background:#cd5c5c;"></div><div><div style="font-size:12px;font-weight:700;">🇾🇪 フーシ派</div><div style="font-size:10px;color:var(--gray);">紅海で商船攻撃（現在は沈黙状態）</div></div></div>
+  <div class="map-leg-item"><div class="m-dot" style="background:#3d6b3d;"></div><div><div style="font-size:12px;font-weight:700;">🇱🇧 ヒズボラ</div><div style="font-size:10px;color:var(--gray);">4月18日停戦合意成立</div></div></div>
+  <div class="map-leg-item"><div class="m-dot" style="background:#e67e22;"></div><div><div style="font-size:12px;font-weight:700;">🚧 ホルムズ海峡</div><div style="font-size:10px;color:var(--gray);">100+隻/日→3〜4隻に激減</div></div></div>
+</div>
+</div>
+</section>
+
+<!-- ════ WEAPONS ════ -->
+<section id="weapons">
+<div class="container">
+<div class="section-h"><span class="section-num">🔫</span>最新鋭兵器解説</div>
+<div class="section-sub">今回の戦争で使われた主要兵器を徹底解析</div>
+<div class="alert-box">💡 特徴：ステルス機・精密誘導爆弾・ドローン・サイバー戦の「多次元統合攻撃」。情報優位（長期ハッキング）がカギを握った。</div>
+<div class="weapon-grid">
+
+<div class="weapon-card">
+  <div class="weapon-head"><div class="weapon-icon" style="background:rgba(46,117,182,0.2);">✈</div><div>
+    <div class="weapon-name">B-2 スピリット</div>
+    <div class="weapon-type">ステルス戦略爆撃機｜米国</div>
+  </div></div>
+  <span class="weapon-tag" style="background:rgba(46,117,182,0.2);color:#5b9bd5;">今回7機投入</span>
+  <div class="spec-row"><span class="spec-label">全幅</span><span class="spec-val">52.4m（ジャンボジェット同等）</span></div>
+  <div class="spec-row"><span class="spec-label">ステルス性</span><span class="spec-val">通常爆撃機の1万分の1以下のレーダー断面積</span></div>
+  <div class="spec-row"><span class="spec-label">航続距離</span><span class="spec-val">1万1000km（給油で無制限）</span></div>
+  <div class="spec-row"><span class="spec-label">保有数</span><span class="spec-val">全世界19機のみ</span></div>
+  <div class="spec-row"><span class="spec-label">1機の価格</span><span class="spec-val">約24億ドル（約3600億円）</span></div>
+  <div class="spec-row"><span class="spec-label">今回の実績</span><span class="spec-val">米本土から18時間飛行→フォルドゥ核施設攻撃</span></div>
+</div>
+
+<div class="weapon-card">
+  <div class="weapon-head"><div class="weapon-icon" style="background:rgba(192,57,43,0.2);">💣</div><div>
+    <div class="weapon-name">GBU-57 MOP</div>
+    <div class="weapon-type">超大型地中貫通爆弾｜米国</div>
+  </div></div>
+  <span class="weapon-tag" style="background:rgba(192,57,43,0.2);color:#e74c3c;">バンカーバスター</span>
+  <div class="spec-row"><span class="spec-label">重量</span><span class="spec-val">13.6トン（クルマ約9台分）</span></div>
+  <div class="spec-row"><span class="spec-label">地中貫通</span><span class="spec-val">地下60m以上（強化コンクリート8m貫通）</span></div>
+  <div class="spec-row"><span class="spec-label">搭載機</span><span class="spec-val">B-2のみ（B-1Bは不可）</span></div>
+  <div class="spec-row"><span class="spec-label">1発のコスト</span><span class="spec-val">約500万ドル（約7.5億円）</span></div>
+  <div class="spec-row"><span class="spec-label">用途</span><span class="spec-val">フォルドゥ地下核施設（深さ80〜90m）破壊</span></div>
+  <div class="spec-row"><span class="spec-label">今回投入数</span><span class="spec-val">12発（フォルドゥ6機×2発）</span></div>
+</div>
+
+<div class="weapon-card">
+  <div class="weapon-head"><div class="weapon-icon" style="background:rgba(201,168,76,0.2);">⚡</div><div>
+    <div class="weapon-name">F-35I アディール</div>
+    <div class="weapon-type">第5世代ステルス戦闘機｜イスラエル仕様</div>
+  </div></div>
+  <span class="weapon-tag" style="background:rgba(201,168,76,0.2);color:#c9a84c;">制空権を掌握</span>
+  <div class="spec-row"><span class="spec-label">最高速度</span><span class="spec-val">マッハ1.6（超音速）</span></div>
+  <div class="spec-row"><span class="spec-label">ステルス性</span><span class="spec-val">F-16の約1000分の1のレーダー断面積</span></div>
+  <div class="spec-row"><span class="spec-label">センサー融合</span><span class="spec-val">全方位センサーをリアルタイム統合</span></div>
+  <div class="spec-row"><span class="spec-label">実績①</span><span class="spec-val">イラン防空システムを全面無力化</span></div>
+  <div class="spec-row"><span class="spec-label">実績②</span><span class="spec-val">F-35系史上初の空対空敵有人機撃墜</span></div>
+  <div class="spec-row"><span class="spec-label">意義</span><span class="spec-val">マスク「時代遅れ」発言を実戦で反証</span></div>
+</div>
+
+<div class="weapon-card">
+  <div class="weapon-head"><div class="weapon-icon" style="background:rgba(46,117,182,0.2);">🚀</div><div>
+    <div class="weapon-name">トマホーク TLAM</div>
+    <div class="weapon-type">巡航ミサイル｜米海軍（潜水艦発射型）</div>
+  </div></div>
+  <span class="weapon-tag" style="background:rgba(46,117,182,0.2);color:#5b9bd5;">30発以上発射</span>
+  <div class="spec-row"><span class="spec-label">速度</span><span class="spec-val">時速880km（亜音速）</span></div>
+  <div class="spec-row"><span class="spec-label">射程</span><span class="spec-val">約2500km</span></div>
+  <div class="spec-row"><span class="spec-label">誘導方式</span><span class="spec-val">GPS＋地形照合（誤差数m以内）</span></div>
+  <div class="spec-row"><span class="spec-label">飛行方式</span><span class="spec-val">地形追従低空飛行でレーダー回避</span></div>
+  <div class="spec-row"><span class="spec-label">今回の標的</span><span class="spec-val">ナタンズ・イスファハン核施設</span></div>
+  <div class="spec-row"><span class="spec-label">発射源</span><span class="spec-val">中東近海展開の米海軍潜水艦</span></div>
+</div>
+
+<div class="weapon-card">
+  <div class="weapon-head"><div class="weapon-icon" style="background:rgba(126,200,126,0.2);">🤖</div><div>
+    <div class="weapon-name">LUCAS（米）vs シャヘド136（イラン）</div>
+    <div class="weapon-type">低コスト自爆型ドローン｜初実戦投入</div>
+  </div></div>
+  <span class="weapon-tag" style="background:rgba(126,200,126,0.15);color:#7ec87e;">2026年2月 LUCAS初実戦</span>
+  <div class="spec-row"><span class="spec-label">シャヘド136</span><span class="spec-val">1機2〜5万ドル・航続2000km</span></div>
+  <div class="spec-row"><span class="spec-label">LUCASの発想</span><span class="spec-val">シャヘド136を「逆工学」でコピーした米国版</span></div>
+  <div class="spec-row"><span class="spec-label">戦略的意味</span><span class="spec-val">安価なドローンで安価なドローンを迎撃</span></div>
+  <div class="spec-row"><span class="spec-label">経済的衝撃</span><span class="spec-val">4億円のパトリオットで2万円のドローンを迎撃する非効率</span></div>
+  <div class="spec-row"><span class="spec-label">イランの損耗</span><span class="spec-val">1000機以上投入→14日で95%消耗</span></div>
+</div>
+
+<div class="weapon-card">
+  <div class="weapon-head"><div class="weapon-icon" style="background:rgba(91,155,213,0.2);">🛡</div><div>
+    <div class="weapon-name">三層防衛システム</div>
+    <div class="weapon-type">アイアンドーム / ダビデスリング / アロー3</div>
+  </div></div>
+  <span class="weapon-tag" style="background:rgba(91,155,213,0.15);color:#5b9bd5;">イスラエル「三層の盾」</span>
+  <div class="spec-row"><span class="spec-label">アイアンドーム</span><span class="spec-val">射程4〜70km、命中率90%、ロケット弾迎撃</span></div>
+  <div class="spec-row"><span class="spec-label">ダビデスリング</span><span class="spec-val">射程〜300km、巡航ミサイル・短距離弾道</span></div>
+  <div class="spec-row"><span class="spec-label">アロー3</span><span class="spec-val">大気圏外迎撃、イランの弾道ミサイルを宇宙で撃破</span></div>
+  <div class="spec-row"><span class="spec-label">Cドーム</span><span class="spec-val">海上版アイアンドーム、今回初実戦投入</span></div>
+  <div class="spec-row"><span class="spec-label">連携</span><span class="spec-val">ヨルダン・米英軍との連携で対処能力を補完</span></div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ════ ECONOMY ════ -->
+<section id="economy">
+<div class="container">
+<div class="section-h"><span class="section-num">📈</span>経済影響分析：日本・世界への影響</div>
+<div class="section-sub">ホルムズ海峡封鎖が引き起こした「エネルギーショック」の実態</div>
+
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="kpi-num">94<span class="kpi-unit">%</span></div><div class="kpi-desc">日本の原油輸入の中東依存度</div></div>
+  <div class="kpi-card"><div class="kpi-num">+93<span class="kpi-unit">%</span></div><div class="kpi-desc">原油価格の上昇幅（60ドル台→117ドル）</div></div>
+  <div class="kpi-card"><div class="kpi-num">+20<span class="kpi-unit">%</span></div><div class="kpi-desc">ガソリン価格上昇（158→190円/L）</div></div>
+  <div class="kpi-card"><div class="kpi-num">254<span class="kpi-unit">日</span></div><div class="kpi-desc">日本の石油備蓄量（全量転用は不可）</div></div>
+</div>
+
+<div class="grid-2" style="margin:20px 0;">
+<div style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:20px;">
+  <div style="font-family:'Noto Serif JP';font-size:15px;font-weight:700;margin-bottom:16px;">📊 WTI原油価格の推移（2026年）</div>
+  <div class="price-track">
+    <div class="price-row"><div class="price-date">1〜2月末</div><div class="price-dot-wrap"><div class="p-dot" style="background:#5b9bd5;"></div></div><div class="price-content"><div class="price-bar" style="width:80px;background:rgba(46,117,182,0.3);"><span class="p-bar-val" style="color:#5b9bd5;">60〜65ドル</span></div><span class="price-note">平常時</span></div></div>
+    <div class="price-row"><div class="price-date">2/28</div><div class="price-dot-wrap"><div class="p-dot" style="background:#e67e22;"></div></div><div class="price-content"><div class="price-bar" style="width:100px;background:rgba(230,126,34,0.3);"><span class="p-bar-val" style="color:#e67e22;">急騰開始</span></div><span class="price-note">攻撃開始</span></div></div>
+    <div class="price-row"><div class="price-date">3/2</div><div class="price-dot-wrap"><div class="p-dot" style="background:#e74c3c;"></div></div><div class="price-content"><div class="price-bar" style="width:130px;background:rgba(231,76,60,0.3);"><span class="p-bar-val" style="color:#e74c3c;">80〜90ドル台</span></div><span class="price-note">封鎖宣言</span></div></div>
+    <div class="price-row"><div class="price-date">4/7</div><div class="price-dot-wrap"><div class="p-dot" style="background:#c0392b;"></div></div><div class="price-content"><div class="price-bar" style="width:185px;background:rgba(192,57,43,0.4);"><span class="p-bar-val" style="color:#ff6b6b;">117.63ドル🔺最高値</span></div></div></div>
+    <div class="price-row"><div class="price-date">4/8</div><div class="price-dot-wrap"><div class="p-dot" style="background:#f39c12;"></div></div><div class="price-content"><div class="price-bar" style="width:130px;background:rgba(243,156,18,0.3);"><span class="p-bar-val" style="color:#f39c12;">91ドル</span></div><span class="price-note">停戦で急落</span></div></div>
+    <div class="price-row"><div class="price-date">現在</div><div class="price-dot-wrap"><div class="p-dot" style="background:#e67e22;"></div></div><div class="price-content"><div class="price-bar" style="width:150px;background:rgba(230,126,34,0.3);"><span class="p-bar-val" style="color:#e67e22;">97〜113ドル</span></div><span class="price-note">高止まり</span></div></div>
+  </div>
+</div>
+<div style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:20px;">
+  <div style="font-family:'Noto Serif JP';font-size:15px;font-weight:700;margin-bottom:16px;">⛽ 日本のガソリン価格推移</div>
+  <div class="price-track">
+    <div class="price-row"><div class="price-date">3月2日</div><div class="price-dot-wrap"><div class="p-dot" style="background:#5b9bd5;"></div></div><div class="price-content"><div class="price-bar" style="width:90px;background:rgba(46,117,182,0.3);"><span class="p-bar-val" style="color:#5b9bd5;">158.5円</span></div></div></div>
+    <div class="price-row"><div class="price-date">3月9日</div><div class="price-dot-wrap"><div class="p-dot" style="background:#f39c12;"></div></div><div class="price-content"><div class="price-bar" style="width:108px;background:rgba(243,156,18,0.3);"><span class="p-bar-val" style="color:#f39c12;">161.8円</span></div><span class="price-note">上昇開始</span></div></div>
+    <div class="price-row"><div class="price-date">3月16日</div><div class="price-dot-wrap"><div class="p-dot" style="background:#e74c3c;"></div></div><div class="price-content"><div class="price-bar" style="width:158px;background:rgba(231,76,60,0.4);"><span class="p-bar-val" style="color:#ff6b6b;">190.8円🔺+20%</span></div></div></div>
+    <div class="price-row"><div class="price-date">軽油</div><div class="price-dot-wrap"><div class="p-dot" style="background:#e67e22;"></div></div><div class="price-content"><div class="price-bar" style="width:145px;background:rgba(230,126,34,0.3);"><span class="p-bar-val" style="color:#e67e22;">146→178円</span></div><span class="price-note">物流波及</span></div></div>
+  </div>
+  <div style="margin-top:14px;padding:10px;background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.3);border-radius:6px;font-size:11px;color:#e8b4ae;">
+    軽油高騰 → トラック輸送コスト増 → 食品・日用品・建材すべて値上がり
+  </div>
+</div>
+</div>
+
+<div style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:20px;margin-top:4px;">
+  <div style="font-family:'Noto Serif JP';font-size:15px;font-weight:700;margin-bottom:16px;">🇯🇵 日本経済への各分野の影響</div>
+  <table class="impact-table" style="width:100%;">
+    <thead><tr><th>分野</th><th>具体的な影響</th></tr></thead>
+    <tbody>
+      <tr><td>エネルギー</td><td>電気代・ガス代・ガソリン代が上昇。備蓄254日分あるが長期化は危険</td></tr>
+      <tr><td>物流・流通</td><td>軽油高騰でトラック輸送コスト増。食品・日用品・家電など全商品に転嫁</td></tr>
+      <tr><td>貿易収支</td><td>輸入額急増→貿易赤字拡大→円安圧力→輸入コスト悪循環</td></tr>
+      <tr><td>製造業</td><td>石油化学・プラスチック・合成繊維・タイヤ原料コスト上昇</td></tr>
+      <tr><td>自動車輸出</td><td>中東は日本車の主要市場。現地販売・輸出額に打撃</td></tr>
+      <tr><td>インフレ</td><td>CPI（消費者物価指数）がさらに加速する恐れ</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+</section>
+
+<!-- ════ THINKTANK ════ -->
+<section id="thinktank">
+<div class="container">
+<div class="section-h"><span class="section-num">🏛</span>シンクタンク・専門機関の分析</div>
+<div class="section-sub">CSIS・IISS・防衛研究所・JIIA・JETRO・アジア経済研究所などの多角的評価</div>
+<div class="tt-grid">
+  <div class="tt-card"><div class="tt-org">CSIS（米・戦略国際問題研究所）</div><div class="tt-quote">初の24時間で1000か所超攻撃後、持続可能なテンポに移行。イランのドローン・ミサイル発射は14日目までに最大95%減少。ただしイランは「残存発射能力」を温存している。</div><div class="tt-date">2026年3月13日｜Mark Cancian & Chris Park</div></div>
+  <div class="tt-card"><div class="tt-org">IISS（国際戦略研究所）</div><div class="tt-quote">米・イスラエルによるイラン空爆とその戦略的含意を軍事・外交の両面から分析。</div><div class="tt-date">2026年3月10日</div></div>
+  <div class="tt-card"><div class="tt-org">防衛省防衛研究所（NIDS第423号）</div><div class="tt-quote">今回の衝突はガザ紛争の「大詰め」としての側面を持つ。LUCASが初めて実戦使用された。ホルムズ海峡封鎖はイランにとっても「諸刃の剣」。フーシ派は事実上の沈黙状態だが脅威は継続。</div><div class="tt-date">2026年3月10日</div></div>
+  <div class="tt-card"><div class="tt-org">日本国際問題研究所（JIIA）</div><div class="tt-quote">①イラン革命体制の存続、②湾岸地域の安全保障構造、③大国間競争の中東再流入という三次元で中東秩序の再編が進む可能性がある。米国の出口戦略が不明確なまま開戦したことへの懸念が大きい。</div><div class="tt-date">2026年3月10日</div></div>
+  <div class="tt-card"><div class="tt-org">アジア経済研究所（IDE-JETRO）</div><div class="tt-quote">2026年2月のギャラップ調査で、米国人がイスラエル(36%)よりパレスチナ(41%)に共感を示す初の逆転が起きた。攻撃直後のロイター調査では支持率わずか27%。米国世論の変化が今後のイスラエル政策を問い直している。</div><div class="tt-date">2026年4月</div></div>
+  <div class="tt-card"><div class="tt-org">JETRO（日本貿易振興機構）</div><div class="tt-quote">日本は原油輸入の約94%を中東に依存し、代替ルートは限られている。WTOの世界貿易見通しでは中東情勢悪化が世界貿易縮小に影響し、中東の輸出量成長率は0.6%増にとどまる見込み。</div><div class="tt-date">2026年4月｜地域・分析レポート</div></div>
+  <div class="tt-card"><div class="tt-org">中東調査会（明治学院大学）</div><div class="tt-quote">トランプ政権には明確な開戦事由・勝利条件・出口戦略が準備されていなかった様子。外交交渉が進展を見せていた時点でネタニヤフ首相に押し切られる形で開戦に至った。</div><div class="tt-date">2026年3月6日</div></div>
+  <div class="tt-card"><div class="tt-org">三井住友DSアセットマネジメント</div><div class="tt-quote">ホルムズ海峡の通航量は封鎖前100隻超/日から4月8日時点で3隻のみ。停戦合意後も正常化せず。長期的には原油価格と日経平均の相関は少ないが、短期的な打撃は大きい。</div><div class="tt-date">2026年4月9日</div></div>
+</div>
+<div style="margin-top:24px;padding:16px 20px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:10px;">
+  <div style="font-family:'Oswald';font-size:12px;letter-spacing:2px;color:var(--gold);margin-bottom:8px;">📌 多角的分析のポイント</div>
+  <ul class="bullet-list">
+    <li>「12日間戦争」では達成できなかったイラン体制転換を目指した今回の攻撃は、核問題の抑止を超えた戦略的行動</li>
+    <li>トランプ政権の「交渉へ追い込む」とネタニヤフの「体制転換」という目標のズレが今後の展開を左右する</li>
+    <li>ホルムズ封鎖は日本・韓国・中国のアジア諸国にとり特に深刻で、エネルギー安全保障の見直しを迫っている</li>
+    <li>米国世論のイスラエル支持が初めてパレスチナを下回ったことが、今後の米国の対中東政策に与える影響は大きい</li>
+  </ul>
+</div>
+<div style="margin-top:14px;font-size:10px;color:var(--gray);line-height:1.8;">
+※ 本資料の情報は公開情報に基づいています。2026年4月22日時点。情勢は急変する可能性があります。<br>
+※ 情報源：CSIS / IISS / 防衛研究所 / JIIA / アジア経済研究所 / JETRO / 日本経済新聞 / Bloomberg / 時事通信 他
+</div>
+</div>
+</section>
+
+<script>
+function show(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const map={'script':0,'timeline':1,'map':2,'weapons':3,'economy':4,'thinktank':5};
+  document.querySelectorAll('.nav-btn')[map[id]].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
