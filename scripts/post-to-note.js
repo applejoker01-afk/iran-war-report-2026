@@ -135,7 +135,7 @@ async function postToNote() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Cookie': `note_gw_session=${CONFIG.sessionToken}`,
+        'Cookie': `_note_session_v5=${CONFIG.sessionToken}`,
         'X-Note-Client-Version': '3.0.0',
         'User-Agent': 'Mozilla/5.0 (compatible; NoteAutoPost/1.0)',
         'Referer': 'https://note.com',
