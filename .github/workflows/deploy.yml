@@ -1,28 +1,9 @@
-# .github/workflows/deploy.yml
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 中東戦争レポート 自動デプロイ & Note自動投稿
-#
-# 動作タイミング:
-#   - main ブランチへの push 時に自動実行
-#   - GitHub Actions の [Run workflow] から手動実行も可能
-#
-# 事前設定 (GitHub → Settings → Secrets and variables → Actions):
-#   NOTE_SESSION_TOKEN  : Noteのセッショントークン（取得方法は README 参照）
-#   NOTE_USER_ID        : NoteのユーザーID (数値)
-#   PAGES_URL           : GitHub PagesのURL (例: https://yourname.github.io/middle-east-report)
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
 name: Deploy & Post to Note
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
-    inputs:
-      skip_note:
-        description: 'Note投稿をスキップする (true/false)'
-        required: false
-        default: 'false'
 
 permissions:
   contents: read
@@ -34,9 +15,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # ─────────────────────────────
-  # JOB 1: GitHub Pages にデプロイ
-  # ─────────────────────────────
   deploy-pages:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
@@ -44,64 +22,31 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: リポジトリをチェックアウト
-        uses: actions/checkout@v4
-
-      - name: GitHub Pages の設定
-        uses: actions/configure-pages@v4
-
-      - name: アーティファクトのアップロード
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: '.'
-
-      - name: GitHub Pages にデプロイ
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: デプロイ完了の通知
-        run: |
-          echo "✅ GitHub Pages デプロイ完了"
-          echo "URL: ${{ steps.deployment.outputs.page_url }}"
-
-  # ─────────────────────────────
-  # JOB 2: Note に自動投稿
-  # ─────────────────────────────
   post-to-note:
     name: Post Article to Note
     runs-on: ubuntu-latest
     needs: deploy-pages
-    if: ${{ github.event.inputs.skip_note != 'true' }}
-
     steps:
-      - name: リポジトリをチェックアウト
-        uses: actions/checkout@v4
-
-      - name: Node.js のセットアップ
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: 依存パッケージのインストール
-        run: |
-          cd scripts
-          npm install
-
-- name: Note 下書きを生成
+        run: cd scripts && npm install
+      - name: Note下書きを生成
         env:
           PAGES_URL: ${{ secrets.PAGES_URL }}
-        run: |
-          node scripts/post-to-note.js
-
+        run: node scripts/post-to-note.js
       - name: 下書きファイルをアップロード
         uses: actions/upload-artifact@v4
         with:
           name: note-draft
           path: note-draft.txt
-
-      - name: 投稿結果の記録
-        if: always()
-        run: |
-          echo "投稿処理が完了しました"
-          echo "ブランチ: ${{ github.ref_name }}"
-          echo "コミット: ${{ github.sha }}"
