@@ -87,15 +87,17 @@ jobs:
           cd scripts
           npm install
 
-      - name: Note に記事を投稿
+- name: Note 下書きを生成
         env:
-          NOTE_SESSION_TOKEN: ${{ secrets.NOTE_SESSION_TOKEN }}
-          NOTE_USER_ID: ${{ secrets.NOTE_USER_ID }}
           PAGES_URL: ${{ secrets.PAGES_URL }}
-          GITHUB_SHA: ${{ github.sha }}
-          GITHUB_REF_NAME: ${{ github.ref_name }}
         run: |
           node scripts/post-to-note.js
+
+      - name: 下書きファイルをアップロード
+        uses: actions/upload-artifact@v4
+        with:
+          name: note-draft
+          path: note-draft.txt
 
       - name: 投稿結果の記録
         if: always()
