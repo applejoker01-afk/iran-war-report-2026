@@ -144,9 +144,6 @@ async function postToNote() {
 body: JSON.stringify({
   title: CONFIG.article.title,
   body: body,
-  status: CONFIG.article.publishStatus,
-  hashtags: CONFIG.article.hashtags.join(','),
-  can_comment: true,
 })
     });
 
