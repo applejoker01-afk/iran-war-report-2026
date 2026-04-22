@@ -159,9 +159,12 @@ async function postToNote() {
       throw new Error(`Note API エラー: ${response.status} ${response.statusText}\n${errorText}`);
     }
 
-    const result = await response.json();
-    const noteUrl = `https://note.com/${result.data?.user?.urlname}/n/${result.data?.key}`;
-
+const result = await response.json();
+console.log('APIレスポンス全体:', JSON.stringify(result, null, 2));
+const noteUrl = result.data?.note_url
+  || result.data?.url
+  || `https://note.com/notes/${result.data?.id}`;
+    
     console.log('');
     console.log('✅ Note記事の作成が完了しました！');
     console.log(`   記事URL: ${noteUrl}`);
