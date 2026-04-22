@@ -19,7 +19,7 @@ const CONFIG = {
   sessionToken: process.env.NOTE_SESSION_TOKEN,
   userId: process.env.NOTE_USER_ID,
   pagesUrl: process.env.PAGES_URL || 'https://yourname.github.io/middle-east-report',
-  noteApiBase: 'https://note.com/api/v2',
+  noteApiBase: 'https://note.com/api/v1',
 
   // 記事設定
   article: {
@@ -131,7 +131,7 @@ async function postToNote() {
 
   try {
     // Note API: 記事の下書き作成
-    const response = await fetch(`${CONFIG.noteApiBase}/notes`, {
+    const response = await fetch(`${CONFIG.noteApiBase}/text_notes`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
