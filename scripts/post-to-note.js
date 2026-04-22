@@ -141,17 +141,13 @@ async function postToNote() {
         'Referer': 'https://note.com',
         'Origin': 'https://note.com',
       },
-      body: JSON.stringify({
-        note: {
-          title: CONFIG.article.title,
-          body: body,
-          status: CONFIG.article.publishStatus,
-          tags: CONFIG.article.hashtags,
-          type: 'TextNote',
-          can_comment: true,
-          is_limited: false,
-        }
-      })
+body: JSON.stringify({
+  title: CONFIG.article.title,
+  body: body,
+  status: CONFIG.article.publishStatus,
+  hashtags: CONFIG.article.hashtags.join(','),
+  can_comment: true,
+})
     });
 
     if (!response.ok) {
