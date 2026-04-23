@@ -1,15 +1,16 @@
 {
-  "name": "middle-east-report-scripts",
-  "version": "1.0.0",
+  "name": "war-report-scripts",
+  "version": "2.0.0",
   "type": "module",
-  "description": "Note自動投稿スクリプト",
+  "description": "自動更新・Note投稿スクリプト群",
   "scripts": {
+    "update": "node daily-update.js",
     "post": "node post-to-note.js",
-    "test": "node --check post-to-note.js && echo 'Syntax OK'"
+    "archive": "node build-archive.js",
+    "test": "node --check daily-update.js && echo 'Syntax OK'"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.20.0",
-    "axios": "^1.6.8",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "xml2js": "^0.6.2"
   }
 }

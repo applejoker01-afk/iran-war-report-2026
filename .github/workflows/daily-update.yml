@@ -1,0 +1,139 @@
+# .github/workflows/daily-update.yml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 毎日自動更新ワークフロー
+#
+# 動作タイミング:
+#   - 毎日 JST 10:00（UTC 01:00）に自動実行
+#   - Actionsタブの [Run workflow] から手動実行も可能
+#
+# 必要なGitHub Secrets:
+#   ANTHROPIC_API_KEY  : Claude APIキー（要約に使用）
+#   NOTE_SESSION_TOKEN : NoteのCookieトークン（_note_session_v5）
+#   PAGES_URL          : GitHub PagesのURL
+#
+# 対応レポート（REPORT_TYPE環境変数で切り替え）:
+#   middle-east / ukraine / taiwan
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+name: Daily Auto Update
+
+on:
+  schedule:
+    - cron: '0 1 * * *'   # UTC 01:00 = JST 10:00
+  workflow_dispatch:
+    inputs:
+      report_type:
+        description: '更新するレポート (middle-east / ukraine / taiwan)'
+        required: false
+        default: 'middle-east'
+      skip_note:
+        description: 'Note下書き生成をスキップ (true/false)'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # ─────────────────────────────────────────
+  # JOB 1: ニュース収集・HTML更新・コミット
+  # ─────────────────────────────────────────
+  update-content:
+    name: Update Report Content
+    runs-on: ubuntu-latest
+    outputs:
+      has_updates: ${{ steps.update.outputs.has_updates }}
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Node.js セットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 依存パッケージのインストール
+        run: cd scripts && npm install
+
+      - name: 日次更新スクリプトを実行
+        id: update
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          REPORT_TYPE: ${{ github.event.inputs.report_type || 'middle-east' }}
+        run: node scripts/daily-update.js
+
+      - name: アーカイブを生成
+        run: |
+          mkdir -p archive
+          DATE=$(date +'%Y-%m-%d')
+          cp index.html archive/${DATE}.html
+          node scripts/build-archive.js
+          echo "✅ archive/${DATE}.html を作成しました"
+
+      - name: 変更をコミット＆プッシュ
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@github.com"
+          git add .
+          git diff --staged --quiet && echo "変更なし" || (
+            git commit -m "🤖 Daily update: $(date +'%Y-%m-%d %H:%M JST')"
+            git push
+            echo "✅ コミット・プッシュ完了"
+          )
+
+  # ─────────────────────────────────────────
+  # JOB 2: GitHub Pages にデプロイ
+  # ─────────────────────────────────────────
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: update-content
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main    # コミット後の最新を取得
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: '.'
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  # ─────────────────────────────────────────
+  # JOB 3: Note 下書きを生成
+  # ─────────────────────────────────────────
+  post-to-note:
+    name: Generate Note Draft
+    runs-on: ubuntu-latest
+    needs: deploy-pages
+    if: ${{ github.event.inputs.skip_note != 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: cd scripts && npm install
+      - name: Note下書きを生成
+        env:
+          PAGES_URL: ${{ secrets.PAGES_URL }}
+          REPORT_TYPE: ${{ github.event.inputs.report_type || 'middle-east' }}
+        run: node scripts/post-to-note.js
+      - name: 下書きをアップロード
+        uses: actions/upload-artifact@v4
+        with:
+          name: note-draft-${{ github.run_id }}
+          path: note-draft.txt
