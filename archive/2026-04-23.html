@@ -20,7 +20,7 @@ body{background:var(--navy);color:var(--white);font-family:'Noto Sans JP',sans-s
 
 /* ── NAV ── */
 nav{position:sticky;top:0;z-index:100;background:rgba(13,27,42,0.97);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);display:flex;align-items:center;padding:0 24px;height:56px;gap:4px;flex-wrap:wrap;}
-.nav-logo{font-family:'Oswald';font-size:16px;color:var(--gold);letter-spacing:2px;margin-right:16px;white-space:nowrap;}
+.nav-logo{font-family:'Oswald';font-size:16px;color:var(--gold);letter-spacing:2px;margin-right:16px;white-space:nowrap;text-decoration:none;cursor:pointer;}
 .nav-btn{padding:5px 12px;border-radius:4px;border:1px solid transparent;background:transparent;color:var(--gray);font-size:12px;cursor:pointer;font-family:'Noto Sans JP';transition:all .2s;white-space:nowrap;}
 .nav-btn.active,.nav-btn:hover{background:var(--mid-blue);color:#fff;border-color:var(--mid-blue);}
 
@@ -137,13 +137,15 @@ section.active{display:block;}
 <body>
 
 <nav>
-  <div class="nav-logo">🌍 中東戦争レポート 2026</div>
+  <a class="nav-logo" href="./index.html">🌍 中東戦争レポート</a>
   <button class="nav-btn active" onclick="show('script')">📄 解説</button>
   <button class="nav-btn" onclick="show('timeline')">📅 タイムライン</button>
   <button class="nav-btn" onclick="show('map')">🗺 戦況マップ</button>
   <button class="nav-btn" onclick="show('weapons')">🔫 兵器解説</button>
   <button class="nav-btn" onclick="show('economy')">📈 経済影響</button>
   <button class="nav-btn" onclick="show('thinktank')">🏛 シンクタンク</button>
+  <button class="nav-btn" onclick="window.location.href='archive/index.html'">📚 過去のアーカイブ</button>
+  <div id="nav-time" style="margin-left:auto;font-size:11px;color:var(--gray);white-space:nowrap;padding-right:4px;"></div>
 </nav>
 
 <!-- ════ 台本・解説 ════ -->
@@ -206,36 +208,33 @@ section.active{display:block;}
 </div>
 <!-- NEWS_END -->
 <div class="script-section">
-<div class="script-h1">📋 動画全体構成</div>
+<div class="script-h1">📋 全体構成</div>
 <table class="info-table">
-  <thead><tr><th>セクション</th><th>内容・目安時間</th></tr></thead>
+  <thead><tr><th>セクション</th><th>内容</th></tr></thead>
   <tbody>
-    <tr><td>オープニング</td><td>約1〜2分｜タイトルカード・概要説明</td></tr>
-    <tr><td>第1部：背景編</td><td>約5〜7分｜なぜ今、中東なのか？</td></tr>
-    <tr><td>第2部：戦況編</td><td>約7〜8分｜2026年イラン戦争の全貌（地図解説付き）</td></tr>
-    <tr><td>第3部：兵器編</td><td>約7〜8分｜最新鋭兵器を徹底解説</td></tr>
-    <tr><td>第4部：経済編</td><td>約5〜7分｜日本への影響：原油・ガソリン・物価</td></tr>
-    <tr><td>クロージング</td><td>約1〜2分｜まとめ・今後の展望</td></tr>
-    <tr><td>合計</td><td>約26〜32分</td></tr>
+    <tr><td>全体概要</td><td>タイトルカード・概要説明</td></tr>
+    <tr><td>第1部：背景編</td><td>なぜ今、中東なのか？</td></tr>
+    <tr><td>第2部：戦況編</td><td>2026年イラン戦争の全貌（地図解説付き）</td></tr>
+    <tr><td>第3部：兵器編</td><td>最新鋭兵器を徹底解説</td></tr>
+    <tr><td>第4部：経済編</td><td>日本への影響：原油・ガソリン・物価</td></tr>
+    <tr><td>クロージング</td><td>まとめ・今後の展望</td></tr>
   </tbody>
 </table>
 </div>
 
-<!-- オープニング -->
+<!-- 全体概要 -->
 <div class="script-section">
-<div class="script-h1">🎬 オープニング（約1〜2分）</div>
-<div class="note-box">📌 演出：タイトルカード→中東の地図（全体）→ホルムズ海峡クローズアップ→BGMフェードイン</div>
+<div class="script-h1">🗒 全体概要</div>
 <p class="script-p">みなさん、こんにちは。今日は、2026年現在、世界で最も緊迫した地域のひとつ——中東情勢についてレポートします。</p>
 <p class="script-p">2023年10月、イスラエルとガザのハマスの衝突から始まったこの戦争は、今やイランを巻き込んだ大規模な地域紛争に拡大しています。</p>
 <p class="script-p">特に2026年2月28日には、アメリカとイスラエルが合同でイランを攻撃するという、歴史的な出来事が発生しました。それに対してイランは報復攻撃を行い、世界の石油輸送の2割を担うホルムズ海峡が事実上封鎖されるという、かつてない事態に陥っています。</p>
 <p class="script-p">日本にとって、これは対岸の火事ではありません。日本の原油輸入の94%が中東に依存しており、ガソリン価格の急騰や物価上昇という形で、すでに私たちの生活に影響が出ています。</p>
-<p class="script-p">今日の動画では、この複雑な状況を3つの視点から解説します。①戦況分析（地図・戦線の動き）、②最新鋭の兵器解説、③日本経済への影響です。ぜひ最後までご覧ください。</p>
+<p class="script-p">今日のレポートでは、この複雑な状況を3つの視点から解説します。①戦況分析（地図・戦線の動き）、②最新鋭の兵器解説、③日本経済への影響です。ぜひ最後までご覧ください。</p>
 </div>
 
 <!-- 第1部 -->
 <div class="script-section">
-<div class="script-h1">第1部：背景編（約5〜7分）</div>
-<div class="note-box">📌 演出：中東全体地図を表示。各国の位置関係を示しながら解説。</div>
+<div class="script-h1">第1部：背景編</div>
 
 <div class="script-h2">① 2023年10月——すべての始まり</div>
 <p class="script-p">2023年10月7日、ガザを拠点とするハマスがイスラエルに大規模な奇襲攻撃を実施。約1200人のイスラエル市民が犠牲になり、約240人が人質としてガザに連行されました。イスラエルはこれを「イスラエルの9.11」と表現し、直ちに軍事報復を開始。ガザへの空爆と地上侵攻を行いました。2025年12月時点では双方合わせて7万1000人以上が犠牲になっています。</p>
@@ -250,8 +249,7 @@ section.active{display:block;}
 
 <!-- 第2部 -->
 <div class="script-section">
-<div class="script-h1">第2部：戦況編（約7〜8分）</div>
-<div class="note-box">📌 演出：中東地図ベースに攻撃・報復ルートをアニメーションで表示</div>
+<div class="script-h1">第2部：戦況編</div>
 
 <div class="script-h2">① 作戦開始：2026年2月28日「Operation Epic Fury」</div>
 <p class="script-p">2026年2月28日、米国とイスラエルが合同でイランへの大規模攻撃を開始。これはアメリカとイスラエルが同等のパートナーとして共同作戦を行う史上初の事例でした。作戦の目標は①ミサイル能力の破壊、②海軍の殲滅、③核兵器保有の阻止、④代理組織への支援遮断の4点です。最初の24時間だけで1000か所以上を攻撃し、イスラエル空軍は700回以上の航空作戦を実施しました。</p>
@@ -266,7 +264,7 @@ section.active{display:block;}
 
 <!-- 第3部（兵器）は兵器タブへ誘導 -->
 <div class="script-section">
-<div class="script-h1">第3部：兵器編（約7〜8分）</div>
+<div class="script-h1">第3部：兵器編</div>
 <div class="alert-box">
   🔫 詳細な兵器解説は <strong>「兵器解説」タブ</strong> をご覧ください。台本テキストは以下の通りです。
 </div>
@@ -277,7 +275,7 @@ section.active{display:block;}
 
 <!-- 第4部（経済）は経済タブへ誘導 -->
 <div class="script-section">
-<div class="script-h1">第4部：経済編（約5〜7分）</div>
+<div class="script-h1">第4部：経済編</div>
 <div class="alert-box">
   📈 詳細なグラフは <strong>「経済影響」タブ</strong> をご覧ください。
 </div>
@@ -287,10 +285,9 @@ section.active{display:block;}
 
 <!-- クロージング -->
 <div class="script-section">
-<div class="script-h1">🎬 クロージング（約1〜2分）</div>
+<div class="script-h1">🎬 クロージング</div>
 <p class="script-p">今日は中東情勢の最新動向を3つの視点からお伝えしました。①ガザ戦争から始まり2026年2月のイラン攻撃への歴史的展開、②ホルムズ海峡という「世界の動脈」が止まった現状、③B-2・GBU-57・F-35Iなど最新鋭兵器の実力、そして④日本の原油94%が中東依存という現実の中で起きているガソリン価格急騰・物価上昇への影響。</p>
-<p class="script-p">現在、米・イランの停戦合意は成立していますが、ホルムズ海峡はいまだ正常化していません。日本はエネルギー安全保障の観点から中東一辺倒の依存体制を見直す必要があるかもしれません。今日の動画が中東情勢を理解するひとつの手がかりになれば嬉しいです。チャンネル登録・高評価をお願いします！</p>
-<div class="note-box">📌 演出：アウトロBGM→チャンネルロゴ→関連動画カード</div>
+<p class="script-p">現在、米・イランの停戦合意は成立していますが、ホルムズ海峡はいまだ正常化していません。日本はエネルギー安全保障の観点から中東一辺倒の依存体制を見直す必要があるかもしれません。今日のレポートが中東情勢を理解するひとつの手がかりになれば嬉しいです。</p>
 </div>
 
 </div><!-- /container -->
@@ -632,6 +629,16 @@ function show(id){
   document.querySelectorAll('.nav-btn')[map[id]].classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
+(function(){
+  function updateTime(){
+    const now=new Date();
+    const el=document.getElementById('nav-time');
+    if(!el)return;
+    el.textContent=now.toLocaleDateString('ja-JP',{year:'numeric',month:'long',day:'numeric'})+' '+now.toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit'})+' 更新';
+  }
+  updateTime();
+  setInterval(updateTime,60000);
+})();
 </script>
 </body>
 </html>
