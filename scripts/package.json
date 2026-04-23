@@ -8,6 +8,8 @@
     "test": "node --check post-to-note.js && echo 'Syntax OK'"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.20.0",
+    "axios": "^1.6.8",
     "node-fetch": "^3.3.2"
   }
 }
