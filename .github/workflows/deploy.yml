@@ -58,26 +58,37 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # node_modulesなど不要ファイルを除外
-          cat > .gitignore << 'EOF'
-          scripts/node_modules/
-          scripts/package-lock.json
-          note-draft.txt
-          *.log
-          EOF
+          echo "=== git status before add ==="
+          git status --short
 
-          # 対象ファイルのみステージング
-          git add index.html archive/ .gitignore
-          git diff --staged --quiet && echo "No changes" && exit 0
+          echo "=== TIMELINE:INSERT marker check ==="
+          grep -c "TIMELINE:INSERT" index.html && echo "marker found" || echo "marker NOT found"
 
-          # 不要ファイルをgitの追跡から除外
+          echo "=== Timeline section line count ==="
+          grep -c "tl-item" index.html && echo "tl-items found"
+
+          # node_modulesをgitの追跡から除外（すでに除外済みの場合はエラー無視）
           git rm -r --cached scripts/node_modules/ 2>/dev/null || true
           git rm --cached scripts/package-lock.json 2>/dev/null || true
 
-          # コミット
+          # 対象ファイルのみ追加
+          git add index.html archive/
+
+          echo "=== git status after add ==="
+          git status --short
+
+          echo "=== git diff staged summary ==="
+          git diff --staged --stat
+
+          # 変更がなければスキップ
+          if git diff --staged --quiet; then
+            echo "⚠ No changes to commit - index.html was not modified"
+            exit 0
+          fi
+
           git commit -m "Auto update $(date +'%Y-%m-%d')"
           git push origin main
-          echo "Push completed"
+          echo "✅ Push completed"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
