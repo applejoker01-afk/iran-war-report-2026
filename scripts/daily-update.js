@@ -18,9 +18,9 @@ const RSS_SOURCES = [
 
 // CSIS専用RSSソース（複数URLを試す）
 const CSIS_RSS_SOURCES = [
-  'https://www.csis.org/feeds/all/rss.xml',
-  'https://www.csis.org/rss',
-  'https://feeds.feedburner.com/csis-all',
+  'https://www.csis.org/media/feeds/csisaudio.xml',   // CSISポッドキャスト・分析
+  'https://www.csis.org/media/feeds/csisnews.xml',    // CSISニュース
+  'https://www.aljazeera.com/xml/rss/all.xml',        // Al Jazeeraフォールバック
 ];
 
 const KEYWORDS = [
